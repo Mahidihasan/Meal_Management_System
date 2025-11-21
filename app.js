@@ -1,5 +1,5 @@
 // Configuration - Replace with your Google Apps Script URL
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzN49VgwNGowGCft1jWiJ0KH-LNKsCAdyXW0xI4ywq19NKVvn12TLUxLLzPXRmOEd8T7Q/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRvDKB3I5GOkJnbabiQtI46pm3_iSUTlPEWqF3OwnnP0D8adAaFEOUB7dAkM4ZBuoPcg/exec';
 
 // DOM elements
 const dashboardBtn = document.getElementById('dashboardBtn');
