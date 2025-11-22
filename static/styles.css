@@ -555,3 +555,53 @@ input:checked + .slider + .toggle-label + .toggle-status {
         text-align: center;
     }
 }
+/* Table layout */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #292626;
+}
+
+.table-header, .table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Name | Breakfast | Night Meal */
+    padding: 10px 15px;
+    align-items: center;
+    border-bottom: 1px solid #292626;
+}
+
+.table-header {
+    font-weight: bold;
+    background-color: #292626;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.table-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-row div {
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* Badges for meal selection */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+.badge.on {
+    background-color: #28a745; /* green */
+}
+
+.badge.off {
+    background-color: #dc3545; /* red */
+}

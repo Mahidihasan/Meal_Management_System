@@ -89,8 +89,12 @@ function getTodayData() {
                     row.classList.add('table-row');
                     row.innerHTML = `
                         <div>${person.name}</div>
-                        <div>${person.breakfast === '1' ? '✅' : '❌'}</div>
-                        <div>${person.nightMeal === '1' ? '✅' : '❌'}</div>
+                        <div class="badge ${person.breakfast === '1' ? 'on' : 'off'}">
+                            ${person.breakfast === '1' ? 'Breakfast ✅' : '❌'}
+                        </div>
+                        <div class="badge ${person.nightMeal === '1' ? 'on' : 'off'}">
+                            ${person.nightMeal === '1' ? 'Night Meal ✅' : '❌'}
+                        </div>
                     `;
                     list.appendChild(row);
                 });
@@ -102,6 +106,15 @@ function getTodayData() {
         })
         .catch(err => console.error(err));
 }
+
+const row = document.createElement('div');
+row.classList.add('table-row'); // This already matches new CSS
+row.innerHTML = `
+    <div>${person.name}</div>
+    <div>${person.breakfast === '1' ? '✅' : '❌'}</div>
+    <div>${person.nightMeal === '1' ? '✅' : '❌'}</div>
+`;
+list.appendChild(row);
 
 // ------------------- Refresh Button -------------------
 qs('#refreshBtn').addEventListener('click', getTodayData);
