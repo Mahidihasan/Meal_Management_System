@@ -59,16 +59,17 @@
                 <div class="content-card">
                     <div class="card-header">
                         <h2>Today's Selections</h2>
-                        <button id="refreshBtn" class="icon-btn">↻</button>
+                        <button id="refreshBtn" class="icon-btn">🔄</button>
                     </div>
                     <div class="table-container">
                         <div class="table-header">
-                            <div class="col-name">Name</div>
-                            <div class="col-breakfast">B</div>
-                            <div class="col-night">N</div>
+                            <div>Name</div>
+                            <div>Meal ID</div>
+                            <div>Breakfast</div>
+                            <div>Night Meal</div>
                         </div>
                         <div class="table-body" id="mealList">
-                            <div class="loading">Loading today's data...</div>
+                            <div class="loading">Loading data...</div>
                         </div>
                     </div>
                 </div>
@@ -91,7 +92,7 @@
                             <label for="mealId">Meal ID</label>
                             <div class="input-with-button">
                                 <input type="text" id="mealId" placeholder="Enter your Meal ID" required>
-                                <button type="button" id="generateIdBtn" class="generate-btn">⚄</button>
+                                <button type="button" id="generateIdBtn" class="generate-btn">🎲</button>
                             </div>
                             <small>Use your permanent Meal ID to update your row</small>
                         </div>
@@ -126,10 +127,10 @@
 
                         <div class="form-actions">
                             <button type="submit" class="submit-btn">
-                                ✓ Save to Google Sheets
+                                💾 Save to Google Sheets
                             </button>
                             <button type="button" onclick="clearForm()" class="clear-btn">
-                                ✗ Clear
+                                🗑️ Clear
                             </button>
                         </div>
                     </form>
@@ -138,15 +139,15 @@
                 </div>
 
                 <div class="info-card">
-                    <h3>Information</h3>
+                    <h3>ℹ️ How It Works</h3>
                     <div class="info-item">
-                        <strong>Meal ID:</strong> Use your permanent ID
+                        <strong>🆔 Meal ID:</strong> Use your permanent ID to update your row
                     </div>
                     <div class="info-item">
-                        <strong>Daily Update:</strong> Updates your row for today
+                        <strong>📅 Daily Update:</strong> Updates your existing row for today
                     </div>
                     <div class="info-item">
-                        <strong>Auto Reset:</strong> Daily at 11:59 PM
+                        <strong>🕛 Auto Reset:</strong> Resets daily at 11:59 PM
                     </div>
                 </div>
             </div>
