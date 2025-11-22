@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Meal Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">🍽️</div>
+                <h1>Hostel Meal Manager</h1>
+            </div>
+            <div class="header-controls">
+                <div class="view-toggle">
+                    <button id="dashboardBtn" class="nav-btn active">
+                        📊 Dashboard
+                    </button>
+                    <button id="addMealBtn" class="nav-btn">
+                        ➕ Add Meal
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Page -->
+            <div id="dashboardPage" class="page active">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🍳</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="totalBreakfast">0</div>
+                            <div class="stat-label">Breakfast</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🌙</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="totalNight">0</div>
+                            <div class="stat-label">Night Meal</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="totalResidents">0</div>
+                            <div class="stat-label">Residents</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Selections -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h2>Today's Selections</h2>
+                        <button id="refreshBtn" class="icon-btn">🔄</button>
+                    </div>
+                    <div class="table-container">
+                        <div class="table-header">
+                            <div>Name</div>
+                           <!-- <div>Meal ID</div>-->
+                            <div>Breakfast</div>
+                            <div>Night Meal</div>
+                        </div>
+                        <div class="table-body" id="mealList">
+                            <div class="loading">Loading data...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Meal Page -->
+            <div id="addMealPage" class="page">
+                <div class="content-card">
+                    <div class="card-header">
+                        <h2>Add Meal Selection</h2>
+                    </div>
+                    
+                    <form id="mealForm" class="meal-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <!--<div class="form-group">
+                            <label for="mealId">Meal ID</label>
+                            <div class="input-with-button">
+                                <input type="text" id="mealId" placeholder="Enter your Meal ID" required>
+                                <button type="button" id="generateIdBtn" class="generate-btn">🎲 Generate</button>
+                            </div>
+                            <small>Use your permanent Meal ID to update your row</small>
+                        </div>-->
+
+                        <div class="meal-preferences">
+                            <label>Meal Preferences</label>
+                            
+                            <div class="toggle-item">
+                                <div class="toggle-label">
+                                    <span class="meal-icon">🍳</span>
+                                    Breakfast
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="breakfast">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="toggle-status" id="breakfast-status">Off</span>
+                            </div>
+
+                            <div class="toggle-item">
+                                <div class="toggle-label">
+                                    <span class="meal-icon">🌙</span>
+                                    Night Meal
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="nightMeal">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="toggle-status" id="nightMeal-status">Off</span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                💾 Save to Google Sheets
+                            </button>
+                            <!--<button type="button" class="clear-btn" onclick="clearForm()">
+                                🗑️ Clear
+                            </button>
+                            <button type="button" class="generate-btn" onclick="testConnection()">
+                                🔧 Test Connection
+                            </button>-->
+                        </div>
+                    </form>
+
+                    <div id="statusMessage"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <span>Hostel Meal Management System</span>
+                <!--<span id="lastUpdated">Last updated: Just now</span>-->
+                <span class="reset-notice">🔄 Resets daily at 11:59 PM</span>
+                <span>Developed by Mahidi</span>
+            </div>
+        </footer>
+        
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
