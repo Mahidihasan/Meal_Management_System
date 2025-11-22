@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Meal Manager</title>
+    <title>Meal Manager</title>
     <link rel="stylesheet" href="static/styles.css">
 </head>
 
@@ -44,14 +44,14 @@
                         <div class="stat-icon">🌙</div>
                         <div class="stat-content">
                             <div class="stat-number" id="totalNight">0</div>
-                            <div class="stat-label">Night Meal</div>
+                            <div class="stat-label">Dinner</div>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">👥</div>
                         <div class="stat-content">
                             <div class="stat-number" id="totalResidents">0</div>
-                            <div class="stat-label">Residents</div>
+                            <div class="stat-label">People</div>
                         </div>
                     </div>
                 </div>
@@ -65,8 +65,10 @@
                         <div class="table-header">
                             <div>Name</div>
                             <div>Breakfast</div>
-                            <div>Night Meal</div>
+                            <div>Dinner</div>
+                            <div>Actions</div>
                         </div>
+
                         <div class="table-body" id="mealList">
                             <div class="loading">Loading data...</div>
                         </div>
@@ -106,7 +108,7 @@
                             <div class="toggle-item">
                                 <div class="toggle-label">
                                     <span class="meal-icon">🌙</span>
-                                    Night Meal
+                                    Dinner
                                 </div>
                                 <label class="toggle-switch">
                                     <input type="checkbox" id="nightMeal">
